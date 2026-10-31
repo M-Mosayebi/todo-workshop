@@ -9,14 +9,19 @@ def list_tasks():
     for i, t in enumerate(tasks, start=1):
         status = "x" if t["done"] else " "
         print(f"{i}. [{status}] {t['title']}")
-        
+
 
 def complete_task(index):
     tasks[index - 1]["done"] = True
-    
-	
+
+
+def delete_task(index):
+    tasks.pop(index - 1)
+
+
 if __name__ == "__main__":
     add_task("Learn Git")
     add_task("Prepare workshop")
     complete_task(1)
+    delete_task(2)
     list_tasks()
