@@ -11,7 +11,12 @@ def list_tasks():
         print(f"{i}. [{status}] {t['title']}")
 
 
+def delete_task(index):
+    tasks.pop(index - 1)
+
+
 if __name__ == "__main__":
     add_task("Learn Git")
     add_task("Prepare workshop")
+    delete_task(2)
     list_tasks()
